@@ -1,0 +1,160 @@
+{
+    "name": "vpc-solution",
+    "version": "0.0.10",
+    "flavors": [
+        {
+            "label": "QuickStart",
+            "name": "quickstart",
+            "working_directory": "examples/quickstart",
+            "compliance": {
+                "controls": [
+                    {
+                        "profile_name": "IBM Cloud for Financial Services v0.5.0",
+                        "control_id": "AC-3"
+                    },
+                    {
+                        "profile_name": "IBM Cloud for Financial Services v0.5.0",
+                        "control_id": "AC-6-0"
+                    },
+                    {
+                        "profile_name": "IBM Cloud for Financial Services v0.5.0",
+                        "control_id": "AU-2(a)"
+                    },
+                    {
+                        "profile_name": "IBM Cloud for Financial Services v0.5.0",
+                        "control_id": "IA-4(4)"
+                    }
+                ]
+            },
+            "iam_permissions": [
+                {
+                    "role_crns": [
+                        "crn:v1:bluemix:public:iam::::role:Administrator"
+                    ],
+                    "service_name": "iam-identity"
+                },
+                {
+                    "role_crns": [
+                        "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+                        "crn:v1:bluemix:public:iam::::role:Administrator"
+                    ],
+                    "service_name": "is.vpc"
+                }
+            ],
+            "architecture": {
+                "descriptions": "Quickstart configuration includes 1 small VSI with floating IP on each subnet",
+                "features": [
+                    {
+                        "title": "Multi Zone",
+                        "description": "VPC spanning 3 availability zones"
+                    },
+                    {
+                        "title": "VSIs",
+                        "description": "One or more VSIs per availability zone"
+                    },
+                    {
+                        "title": "Public Gateway",
+                        "description": "Optional public gateway"
+                    },
+                    {
+                        "title": "Floating IP",
+                        "description": "Optional floating for VSIs"
+                    }
+                ],
+                "diagrams": [
+                    {
+                        "diagram": {
+                            "caption": "Quick start Landing Zone VPC",
+                            "url": "https://raw.githubusercontent.com/gmendel/landing-zone-vpc/main/.docs/vpc-quickstart.svg",
+                            "metadata": []
+                        },
+                        "description": "The **QuickStart** variation of the VPC solution provides a small configuration, with a public facing VPC for the cloud"
+                    }
+                ]
+            }
+        },
+        {
+            "label": "Standard",
+            "name": "standard",
+            "working_directory": "examples/standard",
+            "compliance": {
+                "controls": [
+                    {
+                        "profile_name": "IBM Cloud for Financial Services v0.5.0",
+                        "control_id": "AC-3"
+                    },
+                    {
+                        "profile_name": "IBM Cloud for Financial Services v0.5.0",
+                        "control_id": "AC-6-0"
+                    },
+                    {
+                        "profile_name": "IBM Cloud for Financial Services v0.5.0",
+                        "control_id": "AU-2(a)"
+                    },
+                    {
+                        "profile_name": "IBM Cloud for Financial Services v0.5.0",
+                        "control_id": "IA-4(d)"
+                    },
+                    {
+                        "profile_name": "IBM Cloud for Financial Services v0.5.0",
+                        "control_id": "SC-8-0"
+                    },
+                    {
+                        "profile_name": "IBM Cloud for Financial Services v0.5.0",
+                        "control_id": "RA-5(a)"
+                    },
+                    {
+                        "profile_name": "IBM Cloud for Financial Services v0.5.0",
+                        "control_id": "SC-12-0"
+                    },
+                    {
+                        "profile_name": "IBM Cloud for Financial Services v0.5.0",
+                        "control_id": "SC-13"
+                    }  
+                ]
+            },
+            "iam_permissions": [
+                {
+                    "role_crns": [
+                        "crn:v1:bluemix:public:iam::::role:Administrator"
+                    ],
+                    "service_name": "iam-identity"
+                },
+                {
+                    "role_crns": [
+                        "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+                        "crn:v1:bluemix:public:iam::::role:Administrator"
+                    ],
+                    "service_name": "is.vpc"
+                }
+            ],
+            "architecture": {
+                "descriptions": "Standard configuration includes 1 large VSI on each subnet",
+                "features": [
+                    {
+                        "title": "Multi Zone",
+                        "description": "VPC spanning 3 availability zones"
+                    },
+                    {
+                        "title": "VSIs",
+                        "description": "One or more VSIs per availability zone"
+                    },
+                    {
+                        "title": "Public Gateway",
+                        "description": "Optional public gateway"
+                    }
+                ],
+                "diagrams": [
+                    {
+                        "diagram": {
+                            "caption": "Standard Landing Zone VPC",
+                            "url": "https://raw.githubusercontent.com/gmendel/landing-zone-vpc/main/.docs/vpc-standard.svg",
+                            "metadata": []
+                        },
+                        "description": "The **Standard** variation of the VPC Solution provides a large configuration for a secure VPC for the cloud."
+                    }
+                ]
+            }
+        }
+    ]
+}
